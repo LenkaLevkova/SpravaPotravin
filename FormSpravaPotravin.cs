@@ -23,6 +23,7 @@ namespace SpravaPotravin
         BindingSource source = new BindingSource();
         Jedlo jedlo;
         Zoznam zoznam;
+        ListSortDirection smer;
         public FormSpravaPotravin()
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace SpravaPotravin
             zoznam.Potraviny = new SortableBindingList<Jedlo>();
             source.DataSource = zoznam.Potraviny;
             dataGridViewJedlo.DataSource = source;
+            smer = ListSortDirection.Ascending;
         }
         private void buttonPridatPotraviny_Click(object sender, EventArgs e)
         {
@@ -120,7 +122,6 @@ namespace SpravaPotravin
         private void dataGridViewJedlo_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int stlpecKUsporiadaniu = e.ColumnIndex;
-            ListSortDirection smer = ListSortDirection.Ascending;
 
             if (dataGridViewJedlo.Columns[stlpecKUsporiadaniu].SortMode != DataGridViewColumnSortMode.NotSortable)
             {

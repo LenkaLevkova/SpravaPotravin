@@ -47,6 +47,11 @@ namespace SpravaPotravin
                 }
 
                 zoznam.PridajJedlo(dialogPridat.jedlo);
+
+                dialogPridat.comboBoxJednotky.SelectedIndex = -1;
+                dialogPridat.comboBoxMiesto.SelectedIndex = -1;
+                dialogPridat.textBoxJedlo.Clear();
+                dialogPridat.textBoxMnozstvo.Clear();
             }
         }
 

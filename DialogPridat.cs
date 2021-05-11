@@ -41,25 +41,25 @@ namespace SpravaPotravin
         {
             foreach (Control c in kontroly)
             {
-                if (c is TextBox)
+                if (c is TextBox box)
                 {
-                    if (String.IsNullOrEmpty(((TextBox)c).Text))
+                    if (String.IsNullOrEmpty(box.Text))
                     {
                         return false;
                     }
                 }
 
-                else if (c is ComboBox)
+                else if (c is ComboBox combobox)
                 {
-                    if (String.IsNullOrEmpty(((ComboBox)c).Text))
+                    if (String.IsNullOrEmpty(combobox.Text))
                     {
                         return false;
                     }
                 }
 
-                else if (c is DateTimePicker)
+                else if (c is DateTimePicker datetimepicker)
                 {
-                    if (String.IsNullOrEmpty(((DateTimePicker)c).ToString()))
+                    if (String.IsNullOrEmpty(datetimepicker.ToString()))
                     {
                         return false;
                     }

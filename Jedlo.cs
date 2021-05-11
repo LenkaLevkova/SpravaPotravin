@@ -9,19 +9,6 @@ using KGySoft.ComponentModel;
 
 namespace SpravaPotravin
 {
-    public enum Miesta
-    {
-        Chladnička,
-        Mraznička,
-        Špajza
-    }
-
-    public enum Jednotky
-    {
-        ks,
-        g,
-        ml
-    }
     public class Jedlo
     {
         [DisplayName("Jedlo")]
@@ -48,10 +35,6 @@ namespace SpravaPotravin
         [DisplayName("Expirácia")]
         public DateTime Expiracia { get; set; }
 
-        public static double VysledneMnozstvo;
-
-        public static TimeSpan DniDoKoncaExpiracie;
-
         public readonly TimeSpan KontrolnyTimeSpan = new TimeSpan(3, 0, 0, 0);
 
         public bool BolaVykonanaZmena;
@@ -77,24 +60,14 @@ namespace SpravaPotravin
             BolaVykonanaZmena = true;
             return Expiracia = novaExpiracia;
         }
-
         public bool JeMnozstvoCislo(string zadaneMnozstvo)
         {
-            return double.TryParse(zadaneMnozstvo, out VysledneMnozstvo);
+            return double.TryParse(zadaneMnozstvo, out double _);
         }
         public bool JeExpiraciaKriticka(DateTime zadanaExpiracia)
         {
-            DniDoKoncaExpiracie = zadanaExpiracia - DateTime.Now;
-
-            if (DniDoKoncaExpiracie <= KontrolnyTimeSpan)
-            {
-                return true;
-            }
-
-            else
-            {
-                return false;
-            }
+            TimeSpan DniDoKoncaExpiracie = zadanaExpiracia - DateTime.Now;
+            return DniDoKoncaExpiracie <= KontrolnyTimeSpan;
         }
     }
 }

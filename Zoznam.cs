@@ -23,10 +23,9 @@ namespace SpravaPotravin
         public readonly int sloupecMnozstvo = 1;
 
         public readonly int sloupecExpiracia = 4;
+        public bool BolaVykonanaZmena { get; set; }
 
-        public bool BolaVykonanaZmena;
-
-        public SortableBindingList<Jedlo> Potraviny;
+        public SortableBindingList<Jedlo> Potraviny { get; set; }
  
         public void PridajJedlo(Jedlo zadaneJedlo)
         {
@@ -40,15 +39,7 @@ namespace SpravaPotravin
         }
         public bool JeVybranyRiadok(int index)
         {
-            if(index != 0)
-            {
-                return true;
-            }
-
-            else
-            {
-                return false;
-            }
+            return index != 0;
         }
     }
 }

@@ -32,6 +32,8 @@
             this.labelNoveMnozstvo = new System.Windows.Forms.Label();
             this.textBoxNoveMnozstvo = new System.Windows.Forms.TextBox();
             this.buttonUlozitNoveMnozstvo = new System.Windows.Forms.Button();
+            this.labelPovodneMnozstvoCislo = new System.Windows.Forms.Label();
+            this.labelPovodneMnozstvo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // panelUpravitMnozstvo
@@ -47,18 +49,18 @@
             // 
             this.labelNoveMnozstvo.AutoSize = true;
             this.labelNoveMnozstvo.Font = new System.Drawing.Font("Century", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelNoveMnozstvo.Location = new System.Drawing.Point(40, 113);
+            this.labelNoveMnozstvo.Location = new System.Drawing.Point(12, 193);
             this.labelNoveMnozstvo.Name = "labelNoveMnozstvo";
-            this.labelNoveMnozstvo.Size = new System.Drawing.Size(285, 56);
+            this.labelNoveMnozstvo.Size = new System.Drawing.Size(188, 28);
             this.labelNoveMnozstvo.TabIndex = 1;
-            this.labelNoveMnozstvo.Text = "Aktualizované množstvo\r\n     vybranej položky:";
+            this.labelNoveMnozstvo.Text = "Nové množstvo:";
             // 
             // textBoxNoveMnozstvo
             // 
             this.textBoxNoveMnozstvo.Font = new System.Drawing.Font("Century", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNoveMnozstvo.Location = new System.Drawing.Point(116, 195);
+            this.textBoxNoveMnozstvo.Location = new System.Drawing.Point(228, 186);
             this.textBoxNoveMnozstvo.Name = "textBoxNoveMnozstvo";
-            this.textBoxNoveMnozstvo.Size = new System.Drawing.Size(140, 35);
+            this.textBoxNoveMnozstvo.Size = new System.Drawing.Size(121, 35);
             this.textBoxNoveMnozstvo.TabIndex = 10;
             // 
             // buttonUlozitNoveMnozstvo
@@ -73,12 +75,34 @@
             this.buttonUlozitNoveMnozstvo.Text = "Uložiť";
             this.buttonUlozitNoveMnozstvo.UseVisualStyleBackColor = false;
             // 
+            // labelPovodneMnozstvoCislo
+            // 
+            this.labelPovodneMnozstvoCislo.AutoSize = true;
+            this.labelPovodneMnozstvoCislo.Font = new System.Drawing.Font("Century", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelPovodneMnozstvoCislo.Location = new System.Drawing.Point(270, 131);
+            this.labelPovodneMnozstvoCislo.Name = "labelPovodneMnozstvoCislo";
+            this.labelPovodneMnozstvoCislo.Size = new System.Drawing.Size(79, 28);
+            this.labelPovodneMnozstvoCislo.TabIndex = 12;
+            this.labelPovodneMnozstvoCislo.Text = "label1";
+            // 
+            // labelPovodneMnozstvo
+            // 
+            this.labelPovodneMnozstvo.AutoSize = true;
+            this.labelPovodneMnozstvo.Font = new System.Drawing.Font("Century", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelPovodneMnozstvo.Location = new System.Drawing.Point(12, 131);
+            this.labelPovodneMnozstvo.Name = "labelPovodneMnozstvo";
+            this.labelPovodneMnozstvo.Size = new System.Drawing.Size(225, 28);
+            this.labelPovodneMnozstvo.TabIndex = 13;
+            this.labelPovodneMnozstvo.Text = "Pôvodné množstvo:";
+            // 
             // DialogUpravMnozstvo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(371, 328);
+            this.Controls.Add(this.labelPovodneMnozstvo);
+            this.Controls.Add(this.labelPovodneMnozstvoCislo);
             this.Controls.Add(this.buttonUlozitNoveMnozstvo);
             this.Controls.Add(this.textBoxNoveMnozstvo);
             this.Controls.Add(this.labelNoveMnozstvo);
@@ -96,5 +120,7 @@
         private System.Windows.Forms.Label labelNoveMnozstvo;
         internal System.Windows.Forms.TextBox textBoxNoveMnozstvo;
         internal System.Windows.Forms.Button buttonUlozitNoveMnozstvo;
+        public System.Windows.Forms.Label labelPovodneMnozstvoCislo;
+        private System.Windows.Forms.Label labelPovodneMnozstvo;
     }
 }

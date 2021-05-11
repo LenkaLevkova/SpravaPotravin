@@ -1,19 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Serialization;
-using KGySoft.CoreLibraries;
 using KGySoft.ComponentModel;
-using Newtonsoft.Json;
-using System.IO;
-using System.Data.EntityClient;
-using System.Data.Objects.DataClasses;
 
 
 namespace SpravaPotravin

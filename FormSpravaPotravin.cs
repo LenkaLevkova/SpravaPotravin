@@ -74,8 +74,7 @@ namespace SpravaPotravin
 
             else
             {
-                DialogUpravMnozstvo dialogUpravMnozstvo = new DialogUpravMnozstvo();
-                dialogUpravMnozstvo.labelPovodneMnozstvoCislo.Text = dataGridViewJedlo.CurrentRow.Cells[zoznam.sloupecMnozstvo].Value.ToString();
+                DialogUpravMnozstvo dialogUpravMnozstvo = new DialogUpravMnozstvo(dataGridViewJedlo.CurrentRow.Cells[zoznam.sloupecMnozstvo].Value.ToString());
                 DialogResult dialogUpravMnozstvoResult = dialogUpravMnozstvo.ShowDialog();
                 if (dialogUpravMnozstvoResult == DialogResult.OK)
                 {
@@ -106,8 +105,7 @@ namespace SpravaPotravin
 
             else
             {
-                DialogUpravExpiraciu dialogUpravExpiraciu = new DialogUpravExpiraciu();
-                dialogUpravExpiraciu.dateTimePickerNovaExpiracia.Value = (DateTime)dataGridViewJedlo.CurrentRow.Cells[zoznam.sloupecExpiracia].Value;
+                DialogUpravExpiraciu dialogUpravExpiraciu = new DialogUpravExpiraciu((DateTime)dataGridViewJedlo.CurrentRow.Cells[zoznam.sloupecExpiracia].Value);
                 DialogResult dialogUpravExpiraciuResult = dialogUpravExpiraciu.ShowDialog();
                 if (dialogUpravExpiraciuResult == DialogResult.OK)
                 {

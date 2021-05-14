@@ -5,13 +5,16 @@ namespace SpravaPotravin
 {
     public partial class DialogUpravExpiraciu : Form
     {
-        public DialogUpravExpiraciu()
+        DateTime Expiracia;
+        public DialogUpravExpiraciu(DateTime expiracia)
         {
             InitializeComponent();
+            Expiracia = expiracia;
         }
         private void DialogUpravExpiraciu_Load(object sender, EventArgs e)
         {
-            dateTimePickerNovaExpiracia.MinDate = DateTime.Now;
+            dateTimePickerNovaExpiracia.MinDate = DateTime.Now.Date;
+            dateTimePickerNovaExpiracia.Value = Expiracia;
         }
     }
 }

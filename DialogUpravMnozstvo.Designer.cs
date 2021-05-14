@@ -109,6 +109,7 @@
             this.Controls.Add(this.panelUpravitMnozstvo);
             this.Name = "DialogUpravMnozstvo";
             this.Text = "Upraviť množstvo";
+            this.Load += new System.EventHandler(this.DialogUpravMnozstvo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

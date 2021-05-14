@@ -29,9 +29,18 @@ namespace SpravaPotravin
             string serializovanySubor = JsonConvert.SerializeObject(zoznam);
             File.WriteAllText(Cesta, serializovanySubor);
         }
-        public static string NacitajData()
+        public static SortableBindingList<Jedlo> NacitajData()
         {
-            return Json = File.ReadAllText(Repositar.Cesta);
+            if (File.Exists(Repositar.Cesta))
+            {
+                Json = File.ReadAllText(Repositar.Cesta);
+                return JsonConvert.DeserializeObject<SortableBindingList<Jedlo>>(Json);
+            }
+            
+            else
+            {
+                return new SortableBindingList<Jedlo>();
+            }
         }
     }
 }

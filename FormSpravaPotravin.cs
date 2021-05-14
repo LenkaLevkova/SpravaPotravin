@@ -168,12 +168,7 @@ namespace SpravaPotravin
         }
         private void FormSpravaPotravin_Load(object sender, EventArgs e) 
         {
-            if(File.Exists(Repositar.Cesta))
-            {
-                Repositar.NacitajData();
-                zoznam.Potraviny = JsonConvert.DeserializeObject<SortableBindingList<Jedlo>>(Repositar.Json);
-            }
-
+            zoznam.Potraviny = Repositar.NacitajData();
             dataGridViewJedlo.DataSource = zoznam.Potraviny;
         }
     }   

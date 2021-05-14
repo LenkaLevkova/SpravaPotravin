@@ -74,6 +74,7 @@
             this.dateTimePickerNovaExpiracia.Size = new System.Drawing.Size(218, 35);
             this.dateTimePickerNovaExpiracia.TabIndex = 15;
             this.dateTimePickerNovaExpiracia.Value = new System.DateTime(2021, 4, 23, 14, 53, 5, 0);
+            this.dateTimePickerNovaExpiracia.ValueChanged += new System.EventHandler(this.dateTimePickerNovaExpiracia_ValueChanged);
             // 
             // DialogUpravExpiraciu
             // 

@@ -62,6 +62,7 @@
             this.textBoxNoveMnozstvo.Name = "textBoxNoveMnozstvo";
             this.textBoxNoveMnozstvo.Size = new System.Drawing.Size(121, 35);
             this.textBoxNoveMnozstvo.TabIndex = 10;
+            this.textBoxNoveMnozstvo.TextChanged += new System.EventHandler(this.textBoxNoveMnozstvo_TextChanged);
             // 
             // buttonUlozitNoveMnozstvo
             // 

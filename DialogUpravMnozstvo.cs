@@ -5,7 +5,7 @@ namespace SpravaPotravin
 {
     public partial class DialogUpravMnozstvo : Form
     {
-        string Mnozstvo;
+        public string Mnozstvo;
         public DialogUpravMnozstvo(string mnozstvo)
         {
             InitializeComponent();
@@ -14,6 +14,10 @@ namespace SpravaPotravin
         private void DialogUpravMnozstvo_Load(object sender, EventArgs e)
         {
             labelPovodneMnozstvoCislo.Text = Mnozstvo;   
+        }
+        private void textBoxNoveMnozstvo_TextChanged(object sender, EventArgs e)
+        {
+            Mnozstvo = textBoxNoveMnozstvo.Text;
         }
     }
 }

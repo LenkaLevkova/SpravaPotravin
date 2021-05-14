@@ -5,7 +5,7 @@ namespace SpravaPotravin
 {
     public partial class DialogUpravExpiraciu : Form
     {
-        DateTime Expiracia;
+        public DateTime Expiracia;
         public DialogUpravExpiraciu(DateTime expiracia)
         {
             InitializeComponent();
@@ -13,8 +13,12 @@ namespace SpravaPotravin
         }
         private void DialogUpravExpiraciu_Load(object sender, EventArgs e)
         {
-            dateTimePickerNovaExpiracia.MinDate = DateTime.Now.Date;
             dateTimePickerNovaExpiracia.Value = Expiracia;
+            dateTimePickerNovaExpiracia.MinDate = DateTime.Now.Date;
+        }
+        private void dateTimePickerNovaExpiracia_ValueChanged(object sender, EventArgs e)
+        {
+            Expiracia = dateTimePickerNovaExpiracia.Value.Date;
         }
     }
 }

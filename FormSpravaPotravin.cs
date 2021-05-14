@@ -79,8 +79,8 @@ namespace SpravaPotravin
 
                     else
                     {
-                        Jedlo.UpravMnozstvo(double.Parse(dialogUpravMnozstvo.textBoxNoveMnozstvo.Text));
-                        dataGridViewJedlo.CurrentRow.Cells[zoznam.sloupecMnozstvo].Value = dialogUpravMnozstvo.textBoxNoveMnozstvo.Text;
+                        Jedlo.UpravMnozstvo(double.Parse(dialogUpravMnozstvo.Mnozstvo));
+                        dataGridViewJedlo.CurrentRow.Cells[zoznam.sloupecMnozstvo].Value = dialogUpravMnozstvo.Mnozstvo;
                         dataGridViewJedlo.UpdateCellValue(zoznam.sloupecMnozstvo, dataGridViewJedlo.CurrentCell.RowIndex);
                         dialogUpravMnozstvo.textBoxNoveMnozstvo.Clear();
                     }                 
@@ -101,8 +101,8 @@ namespace SpravaPotravin
                 DialogResult dialogUpravExpiraciuResult = dialogUpravExpiraciu.ShowDialog();
                 if (dialogUpravExpiraciuResult == DialogResult.OK)
                 {
-                    Jedlo.UpravExpiraciu(dialogUpravExpiraciu.dateTimePickerNovaExpiracia.Value.Date);
-                    dataGridViewJedlo.CurrentRow.Cells[zoznam.sloupecExpiracia].Value = dialogUpravExpiraciu.dateTimePickerNovaExpiracia.Value.Date;
+                    Jedlo.UpravExpiraciu(dialogUpravExpiraciu.Expiracia);
+                    dataGridViewJedlo.CurrentRow.Cells[zoznam.sloupecExpiracia].Value = dialogUpravExpiraciu.Expiracia;
                     dataGridViewJedlo.UpdateCellValue(zoznam.sloupecExpiracia, dataGridViewJedlo.CurrentCell.RowIndex);
                 }             
             }

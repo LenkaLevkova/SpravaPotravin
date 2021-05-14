@@ -22,7 +22,6 @@ namespace SpravaPotravin
         public Jedlo VratJedlo()
         {
             jedlo = new Jedlo();
-            jedlo = new Jedlo();
             jedlo.Nazov = textBoxJedlo.Text;
             jedlo.Mnozstvo = double.Parse(textBoxMnozstvo.Text);
             jedlo.Jednotka = (Jednotky)Enum.Parse(typeof(Jednotky), comboBoxJednotky.Text);

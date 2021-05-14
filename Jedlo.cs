@@ -31,7 +31,7 @@ namespace SpravaPotravin
 
         public readonly TimeSpan KontrolnyTimeSpan = new TimeSpan(3, 0, 0, 0);
 
-        public bool BolaVykonanaZmena;
+        public static bool BolaVykonanaZmena;
         public Jedlo(string nazov = "", double mnozstvo = 0, Jednotky jednotka = default, Miesta miesto = default, DateTime expiracia = default)
         {
             Nazov = nazov;
@@ -44,17 +44,19 @@ namespace SpravaPotravin
         {
 
         }
-        public double UpravMnozstvo(double noveMnozstvo)
+        public static double UpravMnozstvo(double noveMnozstvo)
         {
+            Jedlo jedlo = new Jedlo();
             BolaVykonanaZmena = true;
-            return Mnozstvo = noveMnozstvo;
+            return jedlo.Mnozstvo = noveMnozstvo;
         }
-        public DateTime UpravExpiraciu(DateTime novaExpiracia)
+        public static DateTime UpravExpiraciu(DateTime novaExpiracia)
         {
+            Jedlo jedlo = new Jedlo();
             BolaVykonanaZmena = true;
-            return Expiracia = novaExpiracia;
+            return jedlo.Expiracia = novaExpiracia;
         }
-        public bool JeMnozstvoCislo(string zadaneMnozstvo)
+        public static bool JeMnozstvoCislo(string zadaneMnozstvo)
         {
             return double.TryParse(zadaneMnozstvo, out double _);
         }

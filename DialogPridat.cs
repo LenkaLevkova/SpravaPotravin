@@ -18,15 +18,16 @@ namespace SpravaPotravin
         private void buttonUlozitJedlo_Click(object sender, EventArgs e)
         {
             VratJedlo();
+        }
+        public Jedlo VratJedlo()
+        {
+            jedlo = new Jedlo();
+            jedlo = new Jedlo();
             jedlo.Nazov = textBoxJedlo.Text;
             jedlo.Mnozstvo = double.Parse(textBoxMnozstvo.Text);
             jedlo.Jednotka = (Jednotky)Enum.Parse(typeof(Jednotky), comboBoxJednotky.Text);
             jedlo.Miesto = (Miesta)Enum.Parse(typeof(Miesta), comboBoxMiesto.Text);
             jedlo.Expiracia = dateTimePickerExpiracia.Value.Date;
-        }
-        public Jedlo VratJedlo()
-        {
-            jedlo = new Jedlo();
             return jedlo;
         }
 

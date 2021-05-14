@@ -10,16 +10,12 @@ namespace SpravaPotravin
 {
     public partial class FormSpravaPotravin : Form
     {
-        DialogPridaniePotravin dialogPridat;
         BindingSource source = new BindingSource();
-        Jedlo jedlo;
         Zoznam zoznam;
         ListSortDirection smer;
         public FormSpravaPotravin()
         {
             InitializeComponent();
-            dialogPridat = new DialogPridaniePotravin();
-            jedlo = dialogPridat.VratJedlo();
             zoznam = new Zoznam();
             zoznam.Potraviny = new SortableBindingList<Jedlo>();
             source.DataSource = zoznam.Potraviny;
@@ -28,21 +24,17 @@ namespace SpravaPotravin
         }
         private void buttonPridatPotraviny_Click(object sender, EventArgs e)
         {
+            DialogPridaniePotravin dialogPridat = new DialogPridaniePotravin();
             DialogResult dialogPridaniePotravinResult = dialogPridat.ShowDialog();
             if (dialogPridaniePotravinResult == DialogResult.OK)
             {
-                if(!(jedlo.JeMnozstvoCislo(dialogPridat.textBoxMnozstvo.Text)))
+                if(!(Jedlo.JeMnozstvoCislo(dialogPridat.textBoxMnozstvo.Text)))
                 {
                     MessageBox.Show("Zadané množstvo musí byť v číselnej forme.");
                     return;
                 }
 
                 zoznam.PridajJedlo(dialogPridat.jedlo);
-
-                dialogPridat.comboBoxJednotky.SelectedIndex = -1;
-                dialogPridat.comboBoxMiesto.SelectedIndex = -1;
-                dialogPridat.textBoxJedlo.Clear();
-                dialogPridat.textBoxMnozstvo.Clear();
             }
         }
 
@@ -78,7 +70,7 @@ namespace SpravaPotravin
                 DialogResult dialogUpravMnozstvoResult = dialogUpravMnozstvo.ShowDialog();
                 if (dialogUpravMnozstvoResult == DialogResult.OK)
                 {
-                    if (!(jedlo.JeMnozstvoCislo(dialogUpravMnozstvo.textBoxNoveMnozstvo.Text)))
+                    if (!(Jedlo.JeMnozstvoCislo(dialogUpravMnozstvo.textBoxNoveMnozstvo.Text)))
                     {
                         MessageBox.Show("Zadané množstvo musí byť v číselnej forme.");
                         dialogUpravMnozstvo.textBoxNoveMnozstvo.Clear();
@@ -87,7 +79,7 @@ namespace SpravaPotravin
 
                     else
                     {
-                        jedlo.UpravMnozstvo(double.Parse(dialogUpravMnozstvo.textBoxNoveMnozstvo.Text));
+                        Jedlo.UpravMnozstvo(double.Parse(dialogUpravMnozstvo.textBoxNoveMnozstvo.Text));
                         dataGridViewJedlo.CurrentRow.Cells[zoznam.sloupecMnozstvo].Value = dialogUpravMnozstvo.textBoxNoveMnozstvo.Text;
                         dataGridViewJedlo.UpdateCellValue(zoznam.sloupecMnozstvo, dataGridViewJedlo.CurrentCell.RowIndex);
                         dialogUpravMnozstvo.textBoxNoveMnozstvo.Clear();
@@ -109,7 +101,7 @@ namespace SpravaPotravin
                 DialogResult dialogUpravExpiraciuResult = dialogUpravExpiraciu.ShowDialog();
                 if (dialogUpravExpiraciuResult == DialogResult.OK)
                 {
-                    jedlo.UpravExpiraciu(dialogUpravExpiraciu.dateTimePickerNovaExpiracia.Value.Date);
+                    Jedlo.UpravExpiraciu(dialogUpravExpiraciu.dateTimePickerNovaExpiracia.Value.Date);
                     dataGridViewJedlo.CurrentRow.Cells[zoznam.sloupecExpiracia].Value = dialogUpravExpiraciu.dateTimePickerNovaExpiracia.Value.Date;
                     dataGridViewJedlo.UpdateCellValue(zoznam.sloupecExpiracia, dataGridViewJedlo.CurrentCell.RowIndex);
                 }             
@@ -154,7 +146,7 @@ namespace SpravaPotravin
         }
         private void FormSpravaPotravin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if((jedlo.BolaVykonanaZmena) || (zoznam.BolaVykonanaZmena))
+            if((Jedlo.BolaVykonanaZmena) || (zoznam.BolaVykonanaZmena))
             {
                 DialogUkoncitProgram dialogUkoncitProgram = new DialogUkoncitProgram();
                 DialogResult dialogUkoncitProgramResult = dialogUkoncitProgram.ShowDialog();
